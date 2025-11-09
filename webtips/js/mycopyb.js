@@ -1,5 +1,9 @@
-/* mycopy.js */
+/* mycopyb.js */
 
+/* change background to specified color */
+function mySetBg(myObj,myColor) {
+   myObj.style.backgroundColor = myColor;
+}
 
 /* copy text from link alt tag to clipboard, and toggle background color of link */
 /* example: first  click, link changes to opposite color                         */
@@ -15,10 +19,8 @@ function mycopy(myId) {
    var myGrn = "rgb(0, 128, 0)"                 /* var shortcut for green */
    // alert(myBgd); // testing
 
-   if (myBgd === myGrn) {                     /* toggle icon */
-      myObj.style.backgroundColor = 'blue';
-   } else {
-      myObj.style.backgroundColor = 'green';
-   }
+   myObj.style.backgroundColor = 'blue';        /* set background color to blue */
+   setTimeout(mySetBg, 200, myObj, 'green');    /* after 0.2 sec, change back to green */
+   /* setTimeout returns immediately, but mySetBg is schedulded to run 0.2 sec later */
 } /* mycopy */
 
